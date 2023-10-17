@@ -34,4 +34,13 @@ public class ContaCorrente extends Conta{
     public void setTaxaManutencao(double taxaManutencao) {
         this.taxaManutencao = taxaManutencao;
     }
+
+    @Override
+    public boolean transferir(Conta contaATransferir, double valor) {
+        if(this.sacar(valor)) {
+            contaATransferir.depositar(valor);
+            return true;
+        }
+        return false;
+    }
 }
