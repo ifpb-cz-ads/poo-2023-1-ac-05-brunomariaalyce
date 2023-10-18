@@ -35,4 +35,13 @@ public class ContaPoupanca extends Conta{
         return true;
     }
 
+    @Override
+    public boolean transferir(Conta contaATransferir, double valor) {
+        if(this.sacar(valor)) {
+            contaATransferir.depositar(valor);
+            return true;
+        }
+        return false;
+    }
+
 }

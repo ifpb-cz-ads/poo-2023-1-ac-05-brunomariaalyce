@@ -18,13 +18,15 @@ public abstract class Conta {
         this.cliente = cliente;
     }
 
-    public boolean depositar(double valor){
-        //TODO: Verificar problemas no preenchimento
+    public boolean depositar(double valor) {
+        // TODO: Verificar problemas no preenchimento
         saldo += valor;
         return true;
     }
 
     public abstract boolean sacar(double valor);
+
+    public abstract boolean transferir(Conta contaATransferir, double valor);
 
     public int getAgencia() {
         return agencia;
